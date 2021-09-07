@@ -19,6 +19,10 @@ Detected security vulnerabilities such as Spectre and Meltdown and newly discove
 By influencing the outcome of a speculation and the transient instructions to be executed, attackers can have indirect access to secret data in a system. 
 In contrast to previously known side channel attacks, these transient instructions are not part of the program execution at the ISA-level and therefore not visible based on ISA-semantics. As a result, detecting vulnerabilities to transient execution attacks requires considering program execution at the hardware level, which makes the verification problem more challenging.
 
+### Eager Delay
+
+One basic possiblity to patch Spectre vulnerabilities in an out-of-order processor is to delay speculative loads until they can no longer be squashed, i.e. are no longer speculative. This suppresses leakage of a secret by transient executions and therefore prevents Spectre attacks. The method has been proposed by [Sakalis et al.](https://dl.acm.org/doi/10.1145/3307650.3322216).  
+
 
 ## Unique Program Execution Checking (UPEC)
 
